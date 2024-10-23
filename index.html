@@ -50,6 +50,9 @@
         const chatbotResponses = {
           "hello": "Hello! How can I assist you today?",
           "name": "Hello! My name is Pooja Vetri.",
+          "biodata": "born on 26th October 2005.",
+          "interests": "I am interested in web development,blockchain technology and kho-kho game.",
+          "schooling": "I have completed my schooling in Sree Ambaal's Matric HR.SEC.School with 98.17% in board exam.",
           "education": "I am currently studying at Madras Institute of Technology, Anna University.",
           "skills": "I am skilled in C, C++, Java, Time Management, and Dancing.",
           "qualities": "I am kind, humble, and supportive. I value empathy and integrity.",
@@ -67,6 +70,9 @@
 
             if (userInput.includes("hello")) botReply = chatbotResponses.hello;
             if (userInput.includes("name")) botReply = chatbotResponses.name;
+            if (userInput.includes("biodata")) botReply = chatbotResponses.biodata;
+            if (userInput.includes("interests")) botReply = chatbotResponses.interests;
+            if (userInput.includes("schooling")) botReply = chatbotResponses.schooling;
             if (userInput.includes("education")) botReply = chatbotResponses.education;
             if (userInput.includes("skills")) botReply = chatbotResponses.skills;
             if (userInput.includes("qualities") || userInput.includes("personality")) botReply = chatbotResponses.qualities;

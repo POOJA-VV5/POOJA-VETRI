@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Vetri</title>
+    <!-- Favicon Icon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for the music icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="hero">
+            <h1><i class="fas fa-music"></i> Welcome to Pooja Vetri</h1>
+            <p>Supporting society with kindness and care</p>
+        </div>
+    </header>
+
+    <!-- Main Section with full-size images appearing one after another -->
+    <section class="gallery">
+        <img src="2.png" alt="Image 2">
+        <img src="3.png" alt="Image 3">
+        <img src="4.png" alt="Image 4">
+        <img src="5.png" alt="Image 5">
+    </section>
+
+    <!-- Chatbot integration -->
+    <script>
+      // Simple chatbot logic
+      document.addEventListener("DOMContentLoaded", function() {
+        const chatContainer = document.createElement('div');
+        chatContainer.id = "chat-container";
+        document.body.appendChild(chatContainer);
+
+        const chatBotUI = `
+          <div id="chat-box">
+            <div id="chat-header">Pooja Vetri Chatbot</div>
+            <div id="chat-body"></div>
+            <input type="text" id="chat-input" placeholder="Ask me anything..." />
+          </div>
+        `;
+        chatContainer.innerHTML = chatBotUI;
+
+        const chatBody = document.getElementById('chat-body');
+        const chatInput = document.getElementById('chat-input');
+
+        const chatbotResponses = {
+          "hello": "Hello! How can I assist you today?",
+          "name": "Hello! My name is Pooja Vetri.",
+          "education": "I am currently studying at Madras Institute of Technology, Anna University.",
+          "skills": "I am skilled in C, C++, Java, Time Management, and Dancing.",
+          "qualities": "I am kind, humble, and supportive. I value empathy and integrity.",
+          "goal": "My goal is to contribute meaningfully to society, either through direct action or volunteering.",
+          "contact": "You can reach me at poojavetri43eg@mail.com or call me at 9086753243.",
+          "quotes": "Here are some quotes I believe in: 'The best way to predict the future is to create it.' and 'Hard work beats talent when talent doesn't work hard.'"
+        };
+
+        chatInput.addEventListener("keypress", function(e) {
+          if (e.key === "Enter") {
+            const userInput = chatInput.value.toLowerCase();
+            chatInput.value = "";
+
+            let botReply = "Sorry, I didn't understand that. You can ask about my name, education, skills, goals, or contact info.";
+
+            if (userInput.includes("hello")) botReply = chatbotResponses.hello;
+            if (userInput.includes("name")) botReply = chatbotResponses.name;
+            if (userInput.includes("education")) botReply = chatbotResponses.education;
+            if (userInput.includes("skills")) botReply = chatbotResponses.skills;
+            if (userInput.includes("qualities") || userInput.includes("personality")) botReply = chatbotResponses.qualities;
+            if (userInput.includes("goal") || userInput.includes("goals")) botReply = chatbotResponses.goal;
+            if (userInput.includes("contact")) botReply = chatbotResponses.contact;
+            if (userInput.includes("quote") || userInput.includes("quotes")) botReply = chatbotResponses.quotes;
+
+            chatBody.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+            chatBody.innerHTML += `<p><strong>Bot:</strong> ${botReply}</p>`;
+            chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the bottom
+          }
+        });
+      });
+    </script>
+</body>
+</html>
